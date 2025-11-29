@@ -1,4 +1,4 @@
-from drivers import *
+from imports import *
 from scraper import WebScraper
 
 if __name__ == "__main__": #marcador de posición
