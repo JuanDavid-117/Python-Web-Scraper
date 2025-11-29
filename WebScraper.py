@@ -1,4 +1,4 @@
-from imports import *
+from drivers import *
 
 class WebScraper:
     def __init__(self, url):
@@ -184,6 +184,7 @@ class Event:
         self.registration_url: str = data.get("registration_url", "")
         self.description: str = data.get("description", "")
         self.scrape_date: datetime = data.get("scrape_date", datetime.now())
+
 
 
 
