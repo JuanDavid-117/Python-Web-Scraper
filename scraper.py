@@ -1,11 +1,8 @@
 from imports import *
-from driver import get_driver
 
 class WebScraper:
-    def __init__(self, url, use_selenium=False):
-        self._url = url
-        self.use_selenium = use_selenium
-        self.driver = get_driver() if use_selenium else None
+    def __init__(self, url):
+        self._url = url         
         self._html = None
         self._soup = None
 
@@ -46,6 +43,30 @@ class WebScraper:
             return []
         parrafos = [p.get_text(strip=True) for p in contenedor.find_all("p")]
         return parrafos
+
+class SeleniumScraper(WebScraper):
+    def __init__(self, url, driver):
+        super().__init__(url)
+        self.driver = driver
+
+    def _fetch_html(self, url=None):
+        if url is None:
+            url = self._url
+
+        # Navegar a la página
+        self.driver.get(url)
+
+        # Esperar a que cargue el contenido
+        try:
+            WebDriverWait(self.driver, 10).until(
+                lambda d: d.execute_script("return document.readyState") == "complete"
+            )
+        except:
+            pass  # si falla igual seguimos
+
+        # Guardamos el HTML de Selenium en self._html
+        self._html = self.driver.page_source
+
 
 class NewsParser:
     def parse(self, html):
@@ -187,10 +208,3 @@ class Event:
         self.registration_url: str = data.get("registration_url", "")
         self.description: str = data.get("description", "")
         self.scrape_date: datetime = data.get("scrape_date", datetime.now())
-
-
-
-
-
-
-
