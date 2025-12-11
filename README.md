@@ -17,6 +17,10 @@
 - [Ejemplos de Uso](#Ejemplos-de-Uso)
 - [Configuración de Email](#Configuración-de-Email-(Gmail))
 - [Formatos de Reporte Disponibles](#Formatos-de-Reporte-Disponibles)
+- [Tipos de Gráficos](#Tipos-de-Gráficos)
+- [Estadísticas Generadas](#Estadísticas-Generadas)
+- [Flujo de Trabajo Típico](#Flujo-de-Trabajo-Típico)
+- [Características Principales](#Características-Principales)
 
 # Descripción general
 
