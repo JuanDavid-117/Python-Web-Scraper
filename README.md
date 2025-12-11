@@ -124,7 +124,7 @@ Python-Web-Scraper/
 │   │   ├── data_processor.py     # Procesamiento de datos
 │   │   ├── report_generator.py   # Generación de reportes
 │   │   ├── chart_generator.py    # Generación de gráficos
-│   │   └── email_sender.py       # Envío de emails
+│   │   
 │   │
 │   └── exceptions.py              # Excepciones personalizadas
 │
