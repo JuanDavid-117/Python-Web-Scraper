@@ -1,7 +1,14 @@
 # SISTEMA DE WEB SCRAPING EN PYTHON
 **Proyecto Final – Programación Orientada a Objetos – Universidad Nacional de Colombia**
 
-**Descripción general**
+**Autores:**
+* Juan David Moreno Martin
+
+* Yulieth Alexandra Morales Soler
+
+* Roniel David Castro Navarro
+
+# Descripción general
 
 Este proyecto implementa un sistema completo de web scraping desarrollado en python, capaz de extraer, procesar y analizar información proveniente de páginas web tanto **estaticas** como **dinámicas**.
 
