@@ -8,6 +8,9 @@
 
 * Roniel David Castro Navarro
 
+# Tabla de Contenido
+- [Descripción](#Descripción-general)
+
 # Descripción general
 
 Este proyecto implementa un sistema completo de web scraping desarrollado en python, capaz de extraer, procesar y analizar información proveniente de páginas web tanto **estaticas** como **dinámicas**.
