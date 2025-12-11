@@ -315,6 +315,7 @@ El proyecto sigue el patrón **Factory** y **Strategy**:
 ✅ Envío de reportes por email  
 ✅ Estadísticas
 
+# Diagrama 
 ```mermaid
 classDiagram
     %% ============ MODELOS ============
