@@ -1,0 +1,8 @@
+# Dependencias del proyecto
+requests==2.31.0
+beautifulsoup4==4.12.0
+pandas==2.0.0
+playwright==1.40.0
+openpyxl==3.1.2
+lxml==4.9.0
+matplotlib==3.7.0
