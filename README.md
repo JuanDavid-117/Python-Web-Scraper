@@ -165,7 +165,6 @@ classDiagram
 - [Instalación](#Instalación)
 - [Estructura del Proyecto](#Estructura-del-Proyecto)
 - [Ejemplos de Uso](#Ejemplos-de-Uso)
-- [Configuración de Email](#Configuración-de-Email-(Gmail))
 - [Formatos de Reporte Disponibles](#Formatos-de-Reporte-Disponibles)
 - [Tipos de Gráficos](#Tipos-de-Gráficos)
 - [Estadísticas Generadas](#Estadísticas-Generadas)
@@ -337,21 +336,6 @@ python example_email.py
 cd examples
 python example_complete.py
 ```
-
-# Configuración de Email (Gmail)
-
-Para enviar emails con Gmail necesitas una **App Password**:
-
-1. Ve a tu cuenta de Google
-2. Seguridad → Verificación en dos pasos (actívala si no la tienes)
-3. Seguridad → Contraseñas de aplicaciones
-4. Genera una nueva contraseña para "Correo"
-5. Usa esa contraseña en el código (no tu contraseña normal)
-
-**Documentación oficial:**
-https://support.google.com/accounts/answer/185833
-
----
 
 # Formatos de Reporte Disponibles
 
