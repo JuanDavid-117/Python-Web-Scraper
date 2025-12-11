@@ -44,9 +44,6 @@ Su objetivo es automaizar la recolección de datos, generar analisís utiles y p
 - **Envío de información por correo electrónico**  
   El sistema tambien envía automáticamente los archivos generados al correo configurado por el usuario (utilizando contraseña de aplicación).
 
-- **Configuración sencilla mediante archivo de parámetros**  
-  URLs, correos y formatos de salida se definen fácilmente en un archivo de configuración.
-
 - **Automatización completa del proceso**  
   El flujo completo —*scraping → procesamiento → exportación → envío*— se ejecuta sin intervención manual.
 
