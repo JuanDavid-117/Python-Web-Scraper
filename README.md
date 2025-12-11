@@ -11,6 +11,7 @@
 # Tabla de Contenido
 - [Descripción](#Descripción-general)
 - [Características](#Características)
+- [Herramientas](#Herramientas-usadas)
 
 # Descripción general
 
@@ -39,5 +40,33 @@ Su objetivo es automaizar la recolección de datos, generar analisís utiles y p
 
 - **Automatización completa del proceso**  
   El flujo completo —*scraping → procesamiento → exportación → envío*— se ejecuta sin intervención manual.
+
+ # Herramientas usadas
+
+### **Librerías**
+- **Playwright (`playwright.sync_api`)**  
+  Ha sido utilizada para automatizar el navegador (Chromium). Permite abrir páginas, interactuar con elementos, scrollear y extraer contenido dinámico.
+
+- **Pandas (`pandas`)**  
+  Usada para almacenar los datos recolectados en DataFrames y exportarlos como archivos CSV o Excel.
+
+- **Time (`time`)**  
+  Empleada para agregar pausas controladas (`sleep`) que aseguran que el contenido de la página cargue correctamente durante el scraping.
+
+---
+
+### **Conceptos de Programación**
+- **Programación Orientada a Objetos (POO)**  
+  El scraper está estructurado mediante clases y métodos, proporcionando modularidad y una mejor organización del código.
+
+- **Web Scraping Dinámico**  
+  Extracción de información desde páginas que cargan elementos mediante JavaScript, utilizando selectores CSS y la API de Playwright.
+
+- **Control de Flujo**  
+  Uso de ciclos y condicionales para manejar paginación, botones de “Cargar más” y lógica repetitiva del scraping.
+
+- **Manejo de Archivos**  
+  Generación de archivos CSV/XLSX con los datos obtenidos durante la ejecución.
+
 
 
