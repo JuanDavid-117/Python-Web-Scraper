@@ -1,6 +1,156 @@
 # SISTEMA DE WEB SCRAPING EN PYTHON
 **Proyecto Final – Programación Orientada a Objetos – Universidad Nacional de Colombia**
 
+```mermaid
+classDiagram
+    %% ============ MODELOS ============
+    class Product {
+        -string name
+        -string brand
+        -float price
+        -string store
+        +__init__(name, brand, price, store)
+        +clean_price(price_str)$ float
+        +to_dict() dict
+        +__str__() string
+    }
+    
+    class WikiTable {
+        -int table_id
+        -list headers
+        -list rows
+        -DataFrame dataframe
+        +__init__(table_id, headers, rows)
+        +to_dataframe() DataFrame
+        +__str__() string
+    }
+    
+    %% ============ SCRAPERS ============
+    class Scraper {
+        <<abstract>>
+        -string url
+        -list data
+        +__init__(url)
+        +extract_data()* list
+    }
+    
+    class WikiScraper {
+        -BeautifulSoup soup
+        +__init__(url)
+        +extract_data() list~WikiTable~
+        -_parse_tables() list
+    }
+    
+    class RetailScraper {
+        -string store_type
+        -dict selectors
+        -list products
+        +__init__(url, store_type)
+        +extract_data() list~Product~
+        -_get_selectors() dict
+        -_extract_products() void
+    }
+    
+    %% ============ UTILIDADES ============
+    class ScraperFactory {
+        <<factory>>
+        +create_scraper(type, url, **kwargs)$ Scraper
+        -_validate_type(type)$ bool
+    }
+    
+    class DataProcessor {
+        -list data
+        -string data_type
+        -DataFrame df
+        +__init__(data, data_type)
+        +clean_data() DataFrame
+        +get_dataframe() DataFrame
+        +get_statistics() dict
+        -_create_dataframe() DataFrame
+    }
+    
+    class ReportGenerator {
+        -list data
+        -string filename
+        -string data_type
+        -DataProcessor processor
+        -string timestamp
+        +__init__(data, filename, data_type)
+        +generate_csv() string
+        +generate_excel() string
+        +generate_json() string
+        +generate_html() string
+        +generate_full_report(formats, with_charts) dict
+        -_generate_charts() dict
+    }
+    
+    class ChartGenerator {
+        -DataFrame df
+        +__init__(dataframe)
+        +create_bar_chart(x, y, title, filename) string
+        +create_pie_chart(column, title, filename) string
+    }
+    
+    class EmailSender {
+        -string smtp_server
+        -int smtp_port
+        -string email
+        -string password
+        +__init__(smtp_server, smtp_port, email, password)
+        +send_email(recipient, subject, body, attachments) bool
+        -_create_message(recipient, subject, body) MIMEMultipart
+        -_attach_files(message, attachments) void
+    }
+    
+    %% ============ EXCEPCIONES ============
+    class ScraperException {
+        <<exception>>
+        +__init__(message)
+    }
+    
+    class InvalidURLException {
+        <<exception>>
+        +__init__(url)
+    }
+    
+    class ExtractionException {
+        <<exception>>
+        +__init__(message, source)
+    }
+    
+    %% ============ RELACIONES ============
+    
+    %% Herencia
+    Scraper <|-- WikiScraper
+    Scraper <|-- RetailScraper
+    ScraperException <|-- InvalidURLException
+    ScraperException <|-- ExtractionException
+    
+    %% Creación (Factory)
+    ScraperFactory ..> WikiScraper : creates
+    ScraperFactory ..> RetailScraper : creates
+    ScraperFactory ..> Scraper : returns
+    
+    %% Composición y Agregación
+    WikiScraper --> WikiTable : creates
+    RetailScraper --> Product : creates
+    
+    DataProcessor o-- Product : processes
+    DataProcessor o-- WikiTable : processes
+    
+    ReportGenerator *-- DataProcessor : contains
+    ReportGenerator ..> ChartGenerator : uses
+    ReportGenerator o-- Product : processes
+    ReportGenerator o-- WikiTable : processes
+    
+    %% Dependencias
+    EmailSender ..> ReportGenerator : sends reports
+    
+    %% Uso de excepciones
+    Scraper ..> InvalidURLException : throws
+    WikiScraper ..> ExtractionException : throws
+    RetailScraper ..> ExtractionException : throws
+```
 **Autores:**
 * Juan David Moreno Martin
 
@@ -21,6 +171,7 @@
 - [Estadísticas Generadas](#Estadísticas-Generadas)
 - [Flujo de Trabajo Típico](#Flujo-de-Trabajo-Típico)
 - [Características Principales](#Características-Principales)
+
 
 # Descripción general
 
