@@ -42,9 +42,6 @@ Su objetivo es automaizar la recolección de datos, generar analisís utiles y p
 - **Exportación automática de resultados**  
   Los datos pueden ser exportados en formatos como CSV o Excel.
 
-- **Envío de información por correo electrónico**  
-  El sistema tambien envía automáticamente los archivos generados al correo configurado por el usuario (utilizando contraseña de aplicación).
-
 - **Automatización completa del proceso**  
   El flujo completo —*scraping → procesamiento → exportación → envío*— se ejecuta sin intervención manual.
 
