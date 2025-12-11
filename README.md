@@ -68,5 +68,33 @@ Su objetivo es automaizar la recolección de datos, generar analisís utiles y p
 - **Manejo de Archivos**  
   Generación de archivos CSV/XLSX con los datos obtenidos durante la ejecución.
 
+# Instalacion
+
+### 1. Abrir el proyecto en VSCode
+```bash
+cd Python-Web-Scraper
+```
+
+### 2. Crear entorno virtual (Opcional)
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Instalar navegadores de Playwright
+```bash
+playwright install
+# Si no funciona:
+python -m playwright install
+```
+
+
 
 
