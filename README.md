@@ -29,7 +29,7 @@ Este proyecto implementa un sistema completo de web scraping desarrollado en pyt
 
 El sistema integra herramientas modernas como `Request`, `BeautifulSoup`, `Playwright`, `Pandas`, `Matplotlib`, y librerias para generación de reportes y envio de correos.
 
-Su objetivo es automaizar la recolección de datos, generar analisís utiles y permitir la creación de reportes y alertas personalizadas.
+Su objetivo es automaizar la recolección de datos, generar analisís utiles y permitir la creación de reportes.
 
 # Características
 
@@ -43,7 +43,7 @@ Su objetivo es automaizar la recolección de datos, generar analisís utiles y p
   Los datos pueden ser exportados en formatos como CSV o Excel.
 
 - **Automatización completa del proceso**  
-  El flujo completo —*scraping → procesamiento → exportación → envío*— se ejecuta sin intervención manual.
+  El flujo completo —*scraping → procesamiento → exportación se ejecuta automaticamente.
 
  # Herramientas usadas
 
